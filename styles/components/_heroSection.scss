@@ -1,0 +1,130 @@
+@use "../base/variables" as *;
+@use "../base/general" as *;
+@use "../base/fonts" as *;
+
+.hero {
+    padding: $padding-small-screen;
+    background: linear-gradient(181.02deg, rgba(74, 153, 211, 0.2) -17.33%, rgba(74, 153, 211, 0) 75.91%), $white;
+    box-shadow: 0px 4px 16px rgba(75, 0, 129, 0.06);
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $breakpoint-small) {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    @media screen and (min-width: $breakpoint-laptop) {
+        padding: 3rem 6rem 5rem 12rem;
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        padding: 4.5rem 8.6rem 7.52rem 24.5rem;
+    }
+}
+
+.hero__text {
+    text-align: center;
+
+    h1 {
+        color: $purple;
+        font-weight: $font-medium;
+        font-size: 3rem;
+        line-height: 1.4;
+        padding: $padding-small-screen;
+        padding-top: 0;
+
+        @media screen and (min-width: $breakpoint-small) {
+            margin-top: 7rem;
+            padding: 0;
+        }
+
+        @media screen and (min-width: $breakpoint-laptop) {
+            text-align: start;
+        }
+
+        @media screen and (min-width: $breakpoint-laptop) {
+            text-emphasis: 15.5rem;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            font-size: 5rem;
+        }
+    }
+
+    p {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        color: $purple;
+
+        @media screen and (min-width: $breakpoint-laptop) {
+            text-align: start;
+            font-size: 1.8rem;
+            margin-top: 1.4rem;
+        }
+    }
+
+    .btns__group {
+        justify-content: center;
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            justify-content: start;
+        }
+
+        a {
+            border-radius: 5px;
+            border: none;
+            padding: 1rem;
+            font-size: 1.2rem;
+            background-color: $blue;
+            color: $white;
+            cursor: pointer;
+            transition: transform $trs-speed, background-color $trs-speed;
+            will-change: background-color;
+            margin-top: 2rem;
+
+            @media screen and (min-width: $breakpoint-laptop) {
+                margin-top: 4rem;
+            }
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                margin-top: 6rem;
+                padding: 1.4rem 2.2rem;
+                font-size: 1.5rem;
+            }
+
+            img {
+                width: 80%;
+
+                @media screen and (min-width: $breakpoint-desktop) {
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                background-color: $black;
+            }
+        }
+    }
+}
+
+.hero__images {
+    flex: 1 1;
+    padding: $padding-small-screen;
+    max-width: 44rem;
+    height: auto;
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint-small) {
+        width: 35rem;
+        padding: 0;
+    }
+
+    @media screen and (min-width: $breakpoint-laptop) {
+        width: 44rem;
+        margin-top: 3rem;
+    }
+}
